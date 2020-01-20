@@ -1,0 +1,24 @@
+{
+    "description": "make report faster",
+    "icons": {
+        "128": "icon/disabled.png"
+    },
+    "manifest_version": 2,
+    "name": "Idiot Report",
+    "content_scripts": [{
+        "matches": [
+            "https://bozuman.cybozu.com/k/46878/edit"
+        ],
+        "css": ["css/cc.css"],
+        "js": [
+            "lib/jquery-3.4.1.min.js",
+            "js/insert_kintone.js"
+        ]
+    }],
+    "web_accessible_resources": [
+        "lib/jquery-3.4.1.min.js",
+        "js/inject_kintone.js"
+    ],
+    "permissions": [],
+    "version": "1.0.0.0"
+}

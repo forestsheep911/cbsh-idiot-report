@@ -1,0 +1,27 @@
+.fill-button {
+    -webkit-appearance: none;
+    padding: 0 22px;
+    margin-right: 0;
+    height: 30px;
+    font-size: 12px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    background: #30A080;
+    border-color: #30A080;
+    color: #fff;
+    box-sizing: content-box;
+    vertical-align: middle;
+    align-items: flex-start;
+    text-align: center;
+    user-select: none;
+    white-space: pre;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    font: 400 13.3333px Arial;
+    text-rendering: auto;
+}
