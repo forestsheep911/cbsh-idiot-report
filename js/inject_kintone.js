@@ -48,6 +48,9 @@ function buttonSetting(editOrShow) {
     saveButtonClone.id = "save-report-config-button"
     saveButtonClone.style.backgroundColor = "GOLDENROD"
     saveButtonClone.innerText = "保存设定并更新按钮"
+    if (editOrShow !== "edit") {
+        saveButtonClone.removeAttribute("disabled")
+    }
     let richText = document.createElement("textarea")
     richText.id = "save-report-config-text"
     richText.value = localStorage.report_info
