@@ -7,7 +7,7 @@
     "name": "Idiot Report",
     "content_scripts": [{
         "matches": [
-            "https://bozuman.cybozu.com/k/46878/edit"
+            "https://bozuman.cybozu.com/k/46878/*"
         ],
         "css": ["css/cc.css"],
         "js": [

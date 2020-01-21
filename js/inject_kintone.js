@@ -1,24 +1,60 @@
 setTimeout(() => {
-    fillTxtButton()
-    buttonSetting()
+    let path = location.pathname
+    let hash = location.hash
+    if (path.endsWith("edit")) {
+        fillTxtButton()
+        buttonSetting("edit")
+    }
+    if (hash.endsWith("mode=edit")) {
+        fillTxtButton()
+        buttonSetting("show")
+    }
 }, 500);
 
-function buttonSetting() {
-    let appHeaderEles = document.getElementsByClassName("gaia-argoui-app-edit-breadcrumb")
+onhashchange = () => {
+    console.log("on hash")
+    if (location.hash.endsWith("mode=edit")) {
+        console.log("mode edit")
+        fillTxtButton()
+        buttonSetting("show")
+    } else {
+        clearSetting()
+    }
+}
+
+function clearSetting() {
+    let b = document.getElementById("save-report-config-button")
+    let t = document.getElementById("save-report-config-text")
+    if (b) {
+        $(b).remove()
+    }
+    if (t) {
+        $(t).remove()
+    }
+}
+
+function buttonSetting(editOrShow) {
+    let appHeaderEles
+    if (editOrShow === "edit") {
+        appHeaderEles = document.getElementsByClassName("gaia-argoui-app-edit-breadcrumb")
+    } else {
+        appHeaderEles = document.getElementsByClassName("gaia-argoui-app-show-breadcrumb")
+    }
     let appheaderEle = appHeaderEles[0]
     let saveButtons = document.getElementsByClassName("gaia-ui-actionmenu-save")
     let saveButton = saveButtons[0]
     let saveButtonClones = $(saveButton).clone()
     let saveButtonClone = saveButtonClones[0]
+    saveButtonClone.id = "save-report-config-button"
     saveButtonClone.style.backgroundColor = "GOLDENROD"
     saveButtonClone.innerText = "保存设定并更新按钮"
     let richText = document.createElement("textarea")
+    richText.id = "save-report-config-text"
     richText.value = localStorage.report_info
     richText.style.width = "100%"
     richText.style.maxWidth = "100%"
     $(appheaderEle).after(richText)
     $(richText).after(saveButtonClone)
-    console.log(saveButtonClone)
     $(saveButtonClone).click(function () {
         localStorage.report_info = richText.value
         fillTxtButton()
