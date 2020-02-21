@@ -19,20 +19,26 @@ s.onload = function () {
 if (!localStorage.report_info) {
     localStorage.report_info = JSON.stringify([{
             "label": "主要开发1天",
-            "category": "项目常",
+            "category": "项目常规",
             "project": "kintone",
             "content": "编码",
             "hour": "8",
-            "hoursc": "",
             "color": "SEAGREEN"
         },
         {
             "label": "周会",
-            "category": "项目常",
+            "category": "项目常规",
             "project": "kintone",
             "content": "例会",
             "hour": "1",
-            "hoursc": "",
+            "color": "FUCHSIA"
+        },
+        {
+            "label": "研发",
+            "category": "项目研发",
+            "project": "kintone",
+            "content": "编码",
+            "hour": "1",
             "color": "FUCHSIA"
         },
         {
@@ -41,7 +47,6 @@ if (!localStorage.report_info) {
             "project": "js",
             "content": "学习",
             "hour": "",
-            "hoursc": "",
             "color": "SIENNA"
         },
         {
@@ -50,7 +55,6 @@ if (!localStorage.report_info) {
             "project": "工数统计",
             "content": "工数统计",
             "hour": "2",
-            "hoursc": "",
             "color": "DARKORANGE"
         },
         {
@@ -59,7 +63,6 @@ if (!localStorage.report_info) {
             "project": "生日会",
             "content": "生日会",
             "hour": "1",
-            "hoursc": "",
             "color": "YELLOWGREEN"
         },
         {
@@ -68,7 +71,6 @@ if (!localStorage.report_info) {
             "project": "年假",
             "content": "年假",
             "hour": "8",
-            "hoursc": "",
             "color": "MEDIUMTURQUOISE"
         },
         {
@@ -77,7 +79,6 @@ if (!localStorage.report_info) {
             "project": "病假",
             "content": "病假",
             "hour": "4",
-            "hoursc": "",
             "color": "DARKGRAY"
         }
     ])
